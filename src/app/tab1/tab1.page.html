@@ -6,7 +6,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content >
+<ion-content [style.visibility]="content_visibility">
   <ion-card-content class="ion-text-center">
     <qrcode [qrdata]="'My data string'" 
   [width]="256" 
@@ -15,7 +15,7 @@
   <ion-button (click)="startScan()"  class="ion-margin "expand="block" fill="clear" shape="round">
    Scan Qr Code
   </ion-button>
-  <ion-item>
+  <ion-item *ngIf="scanResult">
     <ion-label class="ion-text-wrap">Scan Result: {{scanResult}}</ion-label>
   </ion-item>
   
