@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>
+   Qr Scanner
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-card-content class="ion-text-center">
+    <qrcode [qrdata]="'My data string'" 
+  [width]="256" 
+  [errorCorrectionLevel]="'M'"></qrcode>
+  </ion-card-content>
+  <ion-button (click)="startScan()"  class="ion-margin "expand="block" fill="clear" shape="round">
+   Scan Qr Code
+  </ion-button>
+  <ion-item>
+    <ion-label class="ion-text-wrap">Scan Result: {{scanResult}}</ion-label>
+  </ion-item>
+  
+</ion-content>
